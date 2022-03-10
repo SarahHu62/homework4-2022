@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body{
+    background-color: #f1f1f1;
+    background-image: url("../images/concrete_seamless.png");
+    font-family: 'Poppins', serif;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav_link{
+    display: flex;
+}
+
+a:visited{
+    color:blue;
+}
+
+.card > header{
+    background-color: #288088;
+    border: 2px solid #45ADAD;
+    padding: 20px 0px 20px 0px;
+    border-radius: 50px 50px 0px 0px;
+}
+
+
+.pricing{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.pricing .card{
+    border-radius: 50px 50px 0px 0px;
+    flex-basis: 450px;
+}
+
+
+.gallery img{
+    border: 10px solid #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#logo {
+    animation-name: move1;
+    animation-duration: 5s;
+  }
+
+@keyframes move1 {
+    from {width: 25px; opacity:0;}
+    to {width: 475px; opacity:1;}
+  }
+
+@media screen and (min-width: 900px) {
+
+    header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav_links{
+        display: flex;
+    }
+
+    .pricing .card{
+        flex-basis: 250px;
+    }
+
+    body>header{
+        position: sticky;
+        left: 0;
+        top: 0;
+        bottom: 0;
+    }
+}
+
+
+@media screen and (prefers-reduced-motion: reduce){
+    #logo{
+      animation: none;
+    }
+}
+
+@media print {
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: none;
+    }
+
+    .nav_link{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .pricing{
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
+    .pricing .card{
+        border: solid 2px #45ADDD;
+        flex-basis: 325px;
+    }
+
+    #gallery,.gallery{
+        display: none;
+    }
+
+    .card li:nth-child(2n):after {
+    content: "👍";
+    }
+
+}
+
